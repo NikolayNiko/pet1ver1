@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./VAR1/styles/css/styles.css">
+    <title>eatly</title>
+</head>
+
+<body>
+    <main class="content sign forget">
+        <div class="sign__left">
+            <header class="header__inner sign__left-header__inner forget__header">
+                <a href="index.html" class="header__logo logo sign__logo">
+                    <img src="./VAR1/images/logomin.svg" alt="eatly logo to minimum" class="logo__image" width="41"
+                        height="35" loading="lazy">
+                </a>
+                <nav class="header__menu">
+                </nav>
+                <button class="button__burger-menu burger-button visible-mobile sign-button__burger-menu"
+                    title="Buton to turn of button" type="button" onclick="mobileOverlay.showModal()">
+                    <span class="visually-hidden">Open navigation menu</span>
+                </button>
+            </header>
+            <div class="forget__main">
+                <h1 class="sign__title">Forget Password</h1>
+                <p class="forget__main-text">Enter Your Mail To Reset</p>
+                <div class="sign__forms">
+                    <form class="sign__forms-input">
+                        <input type="email" class="sign__forms-input-email sign__forms-input-item"
+                            placeholder="TomHill@Mail.com">
+                        <button class="sign__forms-btn" title="Sign up" type="submit">
+                            Verify
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <footer class="sign__footer">
+                <a href="/privacypolicy.html" class="sign__footer-privacypolicy">Privacy Policy</a>
+                <a href="/" class="sign__footer-copyrighting">Copyright 2022</a>
+            </footer>
+        </div>
+        <div class="sign__right">
+        </div>
+
+    </main>
+    <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+        <div class="mobile-overlay__top">
+            <a href="index.html" class="mobile-overlay__logo">
+                <img src="./VAR1/images/logo.svg" alt="eatly" class="logo__image" width="112" height="42"
+                    loading="lazy">
+            </a>
+            <form action="#" class="mobile-overlay__close-button-wrapper" method="dialog">
+                <button class="mobile-overlay__close-button cross-button" title="Button for close all" type="submit">
+                    <span class="visually-hidden">Close navigation menu</span>
+                </button>
+            </form>
+        </div>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a href="menu.html" class="mobile-overlay__item">Menu</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="blogmain.html" class="mobile-overlay__item">Blog</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="pricing.html" class="mobile-overlay__item">Pricing</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="about.html" class="mobile-overlay__item">Contact</a>
+                </li>
+            </ul>
+            <button class="mobile-overlay mobile-overlay__button mobile-overlay__button-login"
+                title="Mobile overlay button for login" type="button" onclick="location.href='sign.html'"
+                aria-label="Перейти к форме входа">Login
+            </button>
+            <button class="mobile-overlay mobile-overlay__button mobile-overlay__button-signup"
+                title="Mobile overlay button for signup" type="button" onclick="location.href='sign.html'"
+                aria-label="Перейти к форме входа">Sign Up
+            </button>
+        </div>
+
+    </dialog>
+</body>
+
+</html>

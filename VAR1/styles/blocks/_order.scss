@@ -1,0 +1,120 @@
+.order {
+    margin: 0 auto;
+    @include flex-center;
+    flex-direction: column;
+
+    &__coupon {
+        width: 50%;
+        height: 5vw;
+        min-height: 42px;
+        @include flex-center;
+        gap: 8px;
+        margin-top: 90px;
+
+        &-input {
+            border: none;
+            border-radius: 10px;
+            
+            flex: 8;
+            height: 100%;
+
+            &-icon {
+                background: url(/VAR1/images/minusplus/icon.svg) no-repeat 30px center;
+                background-color: var(--color-grey5);
+                padding-left: 4.5rem;
+                background-size: 30px;
+            }
+        }
+
+        &-btn {
+            flex: 2;
+            height: 100%;
+            border: none;
+            background-color: var(--color-fiolet);
+            @include fluid-text(11, 18);
+            font-family: var(--font-family-poppins);
+            color: var(--color-grey4);
+            border-radius: 10px;
+        }
+    }
+
+    &__check {
+        width: 50%;
+        margin-top: 52px;
+        position: relative;
+
+        &-list {
+            @include fluid-text(12, 20);
+
+        }
+
+        &-list>* {
+            width: 100%;
+        }
+
+        &-items {
+            width: 100%;
+            font-family: var(--font-family-poppins);
+
+            &-lgrey {
+                width: 100%; // Лінія на всю ширину контейнера
+                height: 2px; // Товщина лінії
+                border-bottom: 2px dashed var(--color-grey-contur); // Штрихова лінія
+                margin: 16px 0; // Відступи зверху та знизу
+                box-sizing: border-box;
+            }
+        }
+
+        &-items>:first-child {
+            @include flex-center;
+            justify-content: space-between;
+        }
+
+        &-total {
+            font-weight: 600;
+        }
+
+        &-btn {
+            width: 100%;
+            height: 5vw;
+            @include flex-center;
+            border: none;
+            border-radius: 15px;
+            background-color: var(--color-fiolet);
+            @include fluid-text(11, 18);
+            font-family: var(--font-family-poppins);
+            color: var(--color-grey4);
+            margin-top: 60px;
+        }
+    }
+
+    &__check::before {
+        content: "";
+        display: inline-block;
+        width: 8.2rem;
+        height: 3rem;
+        background-image: url(/VAR1/images/Vector14.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: scaleX(-1) rotate(-55deg);
+        position: relative;
+        top: 13rem;
+        left: -7.5rem;
+
+    }
+
+    &__check::after {
+        content: "";
+        display: inline-block;
+        width: 8.2rem;
+        height: 3rem;
+        background-image: url(/VAR1/images/Vector14.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(-55deg);
+        position: relative;
+        top: -7rem;
+        right: -100%;
+
+    }
+}

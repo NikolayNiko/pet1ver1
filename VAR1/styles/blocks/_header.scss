@@ -1,0 +1,98 @@
+.header {
+    padding-top: 4rem;
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+
+    &__logo {
+        max-width: none;
+    }
+
+    &__logo img {
+        max-width: none;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 20px;
+
+        @include tablet {
+            margin-right: 0;
+        }
+    }
+
+    &__inner {
+        width: 90%;
+        @include flex-center;
+        justify-content: space-around;
+        position: relative;
+        margin-bottom: 3rem;
+    }
+
+    &__menu {
+        display: flex;
+        margin-right: 150px;
+        margin-left: 50px;
+        font-size: 18px;
+        font-family: var(--font-family-inter);
+        font-weight: 400;
+
+        @include tablet {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            column-gap: 53px;
+
+            @include tablet {
+                column-gap: 38px;
+            }
+        }
+
+        &-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: 42px;
+
+            @include hover {
+                color: var(--color-fiolet-main);
+                font-weight: 800;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &:hover:before {
+                transform: scaleX(1);
+                transform-origin: left;
+                transition: transform 0.3s;
+            }
+
+            &:before {
+                content: '';
+                width: 100%;
+                height: 3px;
+                background-color: var(--color-fiolet-main);
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s;
+            }
+        }
+    }
+
+    @include mobile-s {
+        &::after {
+            width: 90%;
+        }
+    }
+}
