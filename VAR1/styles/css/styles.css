@@ -3860,6 +3860,10 @@ input[type=range]::-moz-range-thumb {
 .sign__text-span {
   opacity: 65%;
 }
+.sign__forget {
+  position: relative;
+  right: -15%;
+}
 
 .pp {
   font-family: var(--font-family-poppins);
@@ -4298,14 +4302,37 @@ details .text-mobile {
   margin-left: 8px;
 }
 
+.forget {
+  width: 100%;
+  display: flex;
+}
 .forget__header {
   margin-bottom: 0;
+}
+.forget__title {
+  font-family: var(--font-family-poppins);
+  font-weight: 600;
+  font-size: 2rem;
 }
 .forget__main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 2.5rem;
+}
+.forget__main-text {
+  font-family: var(--font-family-poppins);
+  font-size: 1.5rem;
+  color: #CFCFD3;
+  margin-bottom: 1rem;
+}
+.forget__link {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--font-family-poppins);
+  color: var(--color-fiolet-text);
+  opacity: 70%;
 }
 
 /*# sourceMappingURL=styles.css.map */

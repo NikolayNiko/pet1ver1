@@ -1,11 +1,42 @@
 .forget {
+    // margin: 0 0 0 auto;
+    width: 100%;
+    // align-self: self-end;
+    // margin-right: 3rem;
+    display: flex;
+    
 
     &__header {
         margin-bottom: 0;
     }
 
+    &__title {
+        font-family: var(--font-family-poppins);
+        font-weight: 600;
+        font-size: 2rem;
+
+    }
+
     &__main {
         @include flex-center;
         flex-direction: column;
+        gap: 2.5rem;
+
+        &-text {
+            font-family: var(--font-family-poppins);
+            font-size: 1.5rem;
+            color: #CFCFD3;
+            margin-bottom: 1rem;
+
+        }
+    }
+
+    &__link {
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: var(--font-family-poppins);
+        color: var(--color-fiolet-text);
+        opacity: 70%;
+        // text-align: right;
     }
 }
