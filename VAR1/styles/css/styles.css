@@ -3706,7 +3706,7 @@ input[type=range]::-moz-range-thumb {
 }
 .sign__right {
   width: 50%;
-  background-image: url(/VAR1/images/bgsign.svg);
+  background-image: url(VAR1/images/bgsign.svg);
   background-color: var(--color-fiolet);
   background-size: contain;
   background-repeat: no-repeat;
@@ -3779,20 +3779,20 @@ input[type=range]::-moz-range-thumb {
 }
 .sign__forms-input-name {
   padding-left: 4.5rem;
-  background: url(/VAR1/images/iconicon/iconpeaple.svg) no-repeat 23px center;
+  background: url(VAR1/images/iconicon/iconpeaple.svg) no-repeat 23px center;
   background-size: 23px;
   filter: grayscale(2);
   opacity: 0.6;
 }
 .sign__forms-input-email {
   padding-left: 4.5rem;
-  background: url(/VAR1/images/iconicon/email.svg) no-repeat 23px center;
+  background: url(VAR1/images/iconicon/email.svg) no-repeat 23px center;
   background-size: 23px;
   filter: grayscale(2);
   opacity: 0.6;
 }
 .sign__forms-input-password {
-  background: url(/VAR1/images/iconicon/text.svg) no-repeat 23px center;
+  background: url(VAR1/images/iconicon/text.svg) no-repeat 23px center;
   filter: grayscale(2);
   opacity: 0.6;
 }
