@@ -22,6 +22,12 @@
         border-radius: 15px;
         font-family: var(--font-family-poppins);
 
+        @include mobile {
+            border-radius: none;
+            box-shadow: none;
+            margin-top: 2rem;
+        }
+
         &-btn-block {
             @include flex-center;
             justify-content: flex-end;
@@ -46,12 +52,230 @@
             position: relative;
             cursor: pointer;
         }
-        &-mobile-table {
-            @include flex-center;
-            flex-direction: column;
-            align-items: baseline;
-            padding: 2rem 1.5rem 0 1.3rem;
 
+        &-mobile {
+            &-table {
+                @include flex-center;
+                flex-direction: column;
+                align-items: baseline;
+                padding: 2rem 1.5rem 0 1.3rem;
+
+                
+            }
+
+            &-basic, &-premium {
+                font-family: var(--font-family-poppins);
+                width: 100%;
+                box-shadow: 2px -3px 37px rgba(0, 0, 0, 0.2509803922), 4px 20px 20px rgba(0, 0, 0, 0.1254901961);
+                border-radius: 15px;
+                padding: 1rem 2rem;
+                margin-bottom: 4rem;
+                background-color: #fff;
+            
+            }
+
+            &-price {
+                @include flex-center;
+                align-items: flex-end;
+                gap: 2px;
+                text-align: center;
+                justify-content: start;
+                
+            }
+
+            &-title {
+                
+                font-size: 2rem;
+                font-weight: 600;
+            }
+            &-currency {
+                align-self: flex-start;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-top: 8px;
+                
+            }
+            &-taxed {
+                
+                font-size: 3rem;
+                font-weight: 600;
+                margin: 0 -2px;
+            }
+            &-period {
+                margin-bottom: 14px;
+                font-size: 0.8rem;
+                font-weight: 400;
+                color: var(--color-grey6);
+
+            }
+
+            &-row-divider {
+                height: 1px;
+                background-color: var(--color-grey); // Сіра лінія
+                margin: 1.5rem .3rem;
+            }
+
+            &-text {
+                font-size: .75rem;
+                color: var(--color-grey6);
+            }
+
+            &-button {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: var(--color-fiolet);
+                color: var(--color-white-grey);
+                text-decoration: none;
+                border-radius: 9px;
+                text-align: center;
+                margin-top: 1.5rem;
+                // margin-bottom: 3rem;
+                &:hover {
+                    background-color: var(--color-white-grey);
+                    border: 3px solid var(--color-fiolet);
+                    color: var(--color-fiolet);
+                }
+            }
+
+            &-details {
+                width: 100%;
+
+                &[open] .pricing__price-mobile-chevron {
+                    transform: rotate(-135deg); // Відкритий вигляд
+                }
+            }
+            &-summary {
+                width: 100%;
+                border: none;
+                background-color: #fff;
+                margin-bottom: 1rem;
+                &:hover {
+                    background-color: #fff;
+                }
+
+            }
+            &-chevron {
+                margin: 0 auto 0 1rem; // Шеврон переміщується вправо
+                width: 12px;
+                height: 12px;
+                border: solid #555; // Колір шеврона
+                border-width: 0 2px 2px 0; // Лінії для шеврона
+                transform: rotate(45deg); // Закритий вигляд
+                transition: transform 0.3s ease; // Анімація при відкритті/закритті
+            }
+            &-list {
+                @include flex-center;
+                justify-content: start;
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 0.75rem;
+                color: var(--color-grey7);
+            }
+        }
+        
+        &-table {
+            display: grid;
+            grid-template-columns: 1fr 25% 25%; // Три колонки однакової ширини
+            grid-template-rows: repeat(12, auto); // Дванадцять рядків
+            // gap: 16px; // Відступи між елементами
+            row-gap: 1rem;
+            column-gap: 5rem;
+        
+            & > .row-divider {
+                grid-column: 1 / -1; // Лінія через всю ширину
+                height: 1px;
+                background-color: var(--color-grey); // Сіра лінія
+                margin: 0 3px;
+            }
+        
+            & > .cell {
+                padding: 8px;
+                text-align: center;
+                // @include flex-center;
+        
+                &.first-column {
+                    text-align: left; // Вирівнювання тексту по лівому краю
+                    padding-left: 3rem; // Додатковий відступ зліва
+                }
+                &.first-row {
+                    font-weight: 600;
+                    // font-size: 40px;
+                    @include fluid-text(40, 25);
+                    text-align: left;
+                    margin-top: 1.5rem;
+                }
+                &.second-row {
+                    text-align: left;
+                    font-weight: 500;
+                }
+                &.third-row {
+                    display: inline-flex; // Вирівнювання елементів по горизонталі
+                    align-items: flex-end; // Вирівнювання за нижнім краєм
+                    gap: 2px; // Мінімальна відстань між елементами (регулюється)
+                }
+        
+            }
+        
+            & > .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // margin-left: 12vw;
+        
+                &.cross {
+                    background-color: var(--color-red);// Червоний фон для хрестика
+                    color: var(--color-white-grey);
+                    border-radius: 50%;
+                    width: 36px;
+                    height: 36px;
+                    // margin: 0 auto; // відстп зліва - центрація
+                }
+        
+                &.check {
+                    background-color: var(--color-fiolet); // Фіолетовий фон для галочки
+                    color: var(--color-white-grey);
+                    border-radius: 50%;
+                    width: 36px;
+                    height: 36px;
+                    // margin: 0 auto; // відстп зліва - центрація
+                }
+            }
+        
+            & > .button-cell {
+                & > a {
+                    display: inline-block;
+                    padding: 8px 16px;
+                    background-color: var(--color-fiolet);
+                    color: var(--color-white-grey);
+                    text-decoration: none;
+                    border-radius: 4px;
+                    text-align: center;
+                    margin-top: 1.5rem;
+                    margin-bottom: 3rem;
+                    // margin-left: 12vw;
+        
+                &:hover {
+                    background-color: var(--color-white-grey);
+                    border: 3px solid var(--color-fiolet);
+                    color: var(--color-fiolet);
+                }
+                }
+            }
+            &-currency{
+                font-weight: 600;
+                font-size: 17px;
+                align-self: flex-start;
+            }
+            &-taxed {
+                font-weight: 600;
+                font-size: 46px;
+                line-height: 1;
+            }
+            &-period {
+                font-weight: 500;
+                font-size: 11px;
+                align-self: flex-end; // Переміщення до нижнього краю
+            }
         }
     }
 
@@ -76,107 +300,3 @@
 
 }
 
-.pricing__price-table {
-    display: grid;
-    grid-template-columns: 1fr 25% 25%; // Три колонки однакової ширини
-    grid-template-rows: repeat(12, auto); // Дванадцять рядків
-    // gap: 16px; // Відступи між елементами
-    row-gap: 1rem;
-    column-gap: 5rem;
-
-    & > .row-divider {
-        grid-column: 1 / -1; // Лінія через всю ширину
-        height: 1px;
-        background-color: var(--color-grey); // Сіра лінія
-        margin: 0 3px;
-    }
-
-    & > .cell {
-        padding: 8px;
-        text-align: center;
-        // @include flex-center;
-
-        &.first-column {
-            text-align: left; // Вирівнювання тексту по лівому краю
-            padding-left: 3rem; // Додатковий відступ зліва
-        }
-        &.first-row {
-            font-weight: 600;
-            // font-size: 40px;
-            @include fluid-text(40, 25);
-            text-align: left;
-            margin-top: 1.5rem;
-        }
-        &.second-row {
-            text-align: left;
-            font-weight: 500;
-        }
-        &.third-row {
-            display: inline-flex; // Вирівнювання елементів по горизонталі
-            align-items: flex-end; // Вирівнювання за нижнім краєм
-            gap: 2px; // Мінімальна відстань між елементами (регулюється)
-        }
-
-    }
-
-    & > .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // margin-left: 12vw;
-
-        &.cross {
-            background-color: var(--color-red);// Червоний фон для хрестика
-            color: var(--color-white-grey);
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            // margin: 0 auto; // відстп зліва - центрація
-        }
-
-        &.check {
-            background-color: var(--color-fiolet); // Фіолетовий фон для галочки
-            color: var(--color-white-grey);
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            // margin: 0 auto; // відстп зліва - центрація
-        }
-    }
-
-    & > .button-cell {
-        & > a {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: var(--color-fiolet);
-            color: var(--color-white-grey);
-            text-decoration: none;
-            border-radius: 4px;
-            text-align: center;
-            margin-top: 1.5rem;
-            margin-bottom: 3rem;
-            // margin-left: 12vw;
-
-        &:hover {
-            background-color: var(--color-white-grey);
-            border: 3px solid var(--color-fiolet);
-            color: var(--color-fiolet);
-        }
-        }
-    }
-    &-currency{
-        font-weight: 600;
-        font-size: 17px;
-        align-self: flex-start;
-    }
-    &-taxed {
-        font-weight: 600;
-        font-size: 46px;
-        line-height: 1;
-    }
-    &-period {
-        font-weight: 500;
-        font-size: 11px;
-        align-self: flex-end; // Переміщення до нижнього краю
-    }
-}

@@ -335,6 +335,8 @@ svg * {
   --color-grey3: #A0AEC0;
   --color-grey4: #F3F5F6;
   --color-grey5: #f1f1f1;
+  --color-grey6: #6E757C;
+  --color-grey7: #606060;
   --color-grey-light: #878787;
   --colog-grey-darck: #999999;
   --color-green: #00B67A;
@@ -490,6 +492,7 @@ h4,
   font-size: clamp(41px, 4.8611111111vw, 70px);
 }
 
+/*Для серой линий*/
 .line-gray1::after {
   display: flex;
   content: "";
@@ -3894,6 +3897,13 @@ input[type=range]::-moz-range-thumb {
   border-radius: 15px;
   font-family: var(--font-family-poppins);
 }
+@media (max-width: 767px) {
+  .pricing__price {
+    border-radius: none;
+    box-shadow: none;
+    margin-top: 2rem;
+  }
+}
 .pricing__price-btn-block {
   display: flex;
   justify-content: center;
@@ -3925,26 +3935,103 @@ input[type=range]::-moz-range-thumb {
   align-items: baseline;
   padding: 2rem 1.5rem 0 1.3rem;
 }
-.pricing__control {
-  margin-top: -2rem;
+.pricing__price-mobile-basic, .pricing__price-mobile-premium {
+  font-family: var(--font-family-poppins);
+  width: 100%;
+  box-shadow: 2px -3px 37px rgba(0, 0, 0, 0.2509803922), 4px 20px 20px rgba(0, 0, 0, 0.1254901961);
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  margin-bottom: 4rem;
+  background-color: #fff;
 }
-.pricing__customer {
-  margin-bottom: 8rem;
-}
-
-.btn-free, .btn-pro {
+.pricing__price-mobile-price {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute; /* Абсолютне позиціонування */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center; /* Вирівнювання тексту всередині */
-  line-height: 100%; /* Зберігає вигляд тексту */
+  align-items: flex-end;
+  gap: 2px;
+  text-align: center;
+  justify-content: start;
 }
-
+.pricing__price-mobile-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.pricing__price-mobile-currency {
+  align-self: flex-start;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.pricing__price-mobile-taxed {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 -2px;
+}
+.pricing__price-mobile-period {
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-grey6);
+}
+.pricing__price-mobile-row-divider {
+  height: 1px;
+  background-color: var(--color-grey);
+  margin: 1.5rem 0.3rem;
+}
+.pricing__price-mobile-text {
+  font-size: 0.75rem;
+  color: var(--color-grey6);
+}
+.pricing__price-mobile-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--color-fiolet);
+  color: var(--color-white-grey);
+  text-decoration: none;
+  border-radius: 9px;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.pricing__price-mobile-button:hover {
+  background-color: var(--color-white-grey);
+  border: 3px solid var(--color-fiolet);
+  color: var(--color-fiolet);
+}
+.pricing__price-mobile-details {
+  width: 100%;
+}
+.pricing__price-mobile-details[open] .pricing__price-mobile-chevron {
+  transform: rotate(-135deg);
+}
+.pricing__price-mobile-summary {
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+.pricing__price-mobile-summary:hover {
+  background-color: #fff;
+}
+.pricing__price-mobile-chevron {
+  margin: 0 auto 0 1rem;
+  width: 12px;
+  height: 12px;
+  border: solid #555;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+.pricing__price-mobile-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.75rem;
+  color: var(--color-grey7);
+}
 .pricing__price-table {
   display: grid;
   grid-template-columns: 1fr 25% 25%;
@@ -4030,6 +4117,25 @@ input[type=range]::-moz-range-thumb {
   font-weight: 500;
   font-size: 11px;
   align-self: flex-end;
+}
+.pricing__control {
+  margin-top: -2rem;
+}
+.pricing__customer {
+  margin-bottom: 8rem;
+}
+
+.btn-free, .btn-pro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Абсолютне позиціонування */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center; /* Вирівнювання тексту всередині */
+  line-height: 100%; /* Зберігає вигляд тексту */
 }
 
 .review_payment {
@@ -4164,7 +4270,7 @@ input[type=range]::-moz-range-thumb {
 .blogmain__articles-list-item {
   border-radius: 1rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2509803922), 0 30px 420px rgba(70, 70, 70, 0.0509803922);
-  max-width: 27vw;
+  width: 27vw;
 }
 @media (max-width: 767px) {
   .blogmain__articles-list-item {
@@ -4176,11 +4282,11 @@ input[type=range]::-moz-range-thumb {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  min-height: 20vw;
-  margin: 17px 13px 21px;
+  justify-content: start;
   width: 100%;
+}
+.blogmain__articles-list-item-image {
+  padding-top: 1rem;
 }
 @media (max-width: 1280px) {
   .blogmain__articles-list-item-image {
@@ -4199,7 +4305,6 @@ input[type=range]::-moz-range-thumb {
   font-family: var(--font-family-poppins);
   font-size: clamp(15px, 1.5277777778vw, 22px);
   font-weight: 600;
-  align-self: start;
   margin-top: 1rem;
 }
 @media (max-width: 1023px) {
@@ -4214,6 +4319,7 @@ input[type=range]::-moz-range-thumb {
   align-items: center;
   font-family: var(--font-family-poppins);
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 .blogmain__articles-list-item-autor {
   margin-left: 1rem;
@@ -4241,10 +4347,10 @@ input[type=range]::-moz-range-thumb {
 .blogmain__articles-title {
   font-family: var(--font-family-poppins);
   font-weight: 600;
-  font-size: clamp(25px, 2.2222222222vw, 32px);
+  font-size: clamp(32px, 3.75vw, 54px);
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 .blogmain__articles-title span {
   color: var(--color-fiolet);
@@ -4252,6 +4358,7 @@ input[type=range]::-moz-range-thumb {
 .blogmain__get50 {
   margin-top: 6rem;
   margin-bottom: 6rem;
+  width: 92%;
 }
 
 details {
@@ -4269,6 +4376,7 @@ details summary {
   border-radius: 4px;
   background-color: #f9f9f9;
   gap: 8px;
+  font-weight: 600;
 }
 details summary::marker {
   display: none;
@@ -4292,8 +4400,8 @@ details .icon-mobile {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background-color: #6a0dad;
   color: #fff;

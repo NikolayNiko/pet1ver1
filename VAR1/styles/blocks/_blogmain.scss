@@ -14,7 +14,7 @@
                 border-radius: 1rem;
                 box-shadow: 0 12px 30px #00000040,
                 0 30px 420px #4646460D;
-                max-width: 27vw;
+                width: 27vw;
 
                 @include mobile {
                     min-width: 85%;
@@ -23,14 +23,17 @@
                 &-content {
                     @include flex-center;
                     flex-direction: column;
-                    justify-content: space-between;
-                    align-items: start;
-                    min-height: 20vw;
-                    margin: 17px 13px 21px;
+                    // justify-content: space-between;
+                    justify-content: start;
+                    // align-items: start;
+                    // min-height: 20vw;
+                    // margin: 17px 13px 21px;
                     width: 100%;
 
                 }
                 &-image {
+
+                    padding-top: 1rem;
 
                     @include desktop {
                         max-width: 91%;
@@ -47,7 +50,7 @@
                     font-family: var(--font-family-poppins);
                     @include fluid-text(22, 15);
                     font-weight: 600;
-                    align-self: start;
+                    // align-self: start;
                     margin-top: 1rem;
                 }
                 &-avatar {
@@ -60,6 +63,7 @@
                     @include flex-center;
                     font-family: var(--font-family-poppins);
                     margin-top: 1rem;
+                    margin-bottom: 1.5rem;
                 }
                 &-autor {
                     margin-left: 1rem;
@@ -85,10 +89,10 @@
         &-title {
             font-family: var(--font-family-poppins);
             font-weight: 600;
-            @include fluid-text(32, 25);
+            @include fluid-text(54, 32);
             margin: 0 auto;
             text-align: center;
-            margin-bottom: 6rem;
+            margin-bottom: 3rem;
 
         }
         &-title span {
@@ -98,6 +102,7 @@
     &__get50 {
         margin-top: 6rem;
         margin-bottom: 6rem;
+        width: 92%;
     }
 
 }
